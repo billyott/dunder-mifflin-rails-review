@@ -1,0 +1,19 @@
+<h1>Create New Employee</h1>
+
+<%= form_tag employees_path do %>
+  <label>First Name:</label><br>
+  <%= text_field_tag :'employee[first_name]' %><br>
+  <label>Last Name:</label><br>
+  <%= text_field_tag :'employee[last_name]' %><br>
+  <label>Title:</label><br>
+  <%= text_field_tag :'employee[title]' %><br>
+  <label>Office:</label><br>
+  <%= text_field_tag :'employee[office]' %><br>
+  <label>Alias:</label><br>
+  <%= text_field_tag :'employee[alias]' %><br>
+  <label>Img URL:</label><br>
+  <%= text_field_tag :'employee[img_url]' %><br>
+  <label>Dog:</label><br>
+  <%= select_tag :'employee[dog.name]', options_for_select(Dog.all.map { |dog| dog.name }) %>
+  <%= submit_tag "Submit" %>
+<% end %>
